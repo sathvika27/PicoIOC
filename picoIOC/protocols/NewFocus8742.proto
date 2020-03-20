@@ -1,0 +1,20 @@
+OutTerminator = CR;
+InTerminator = CR LF;
+
+getIPAddress{
+	out "IPADDR?";
+	in "%s";
+}
+
+move_relative{
+	out "%(\$1)iPR%i";
+}
+
+getVelo{
+	out "%(\$1)iVA?";
+	in "%i";
+}
+
+setVelo{
+	out "%(\$1)iVA%i";
+}

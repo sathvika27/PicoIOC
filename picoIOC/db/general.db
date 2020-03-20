@@ -1,0 +1,6 @@
+
+record(stringin, "$(P):IPADDRESS"){
+	field(PINI, "YES")
+	field(DTYP, "stream")
+	field(INP, "@NewFocus8742.proto getIPAddress() $(PMC)")
+}

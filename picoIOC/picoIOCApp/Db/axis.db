@@ -1,0 +1,19 @@
+record(longout, "$(P):A$(AXIS):MOVE_REL"){
+    field(DTYP, "stream")
+    field(OUT, "@NewFocus8742.proto move_relative($(P):A$(AXIS):AXIS) $(PORT)")
+}
+record(longin, "$(P):A$(AXIS):AXIS"){
+    field(PINI, "YES")
+    field(VAL, "$(AXIS)")
+}
+record(longin, "$(P):A$(AXIS):GET_VELOCITY"){
+    field(PINI, "YES")
+    field(DTYP, "stream")
+    field(INP, "@NewFocus8742.proto getVelo($(P):A$(AXIS):AXIS) $(PORT)")
+}
+record(longout, "$(P):A$(AXIS):SET_VELOCITY"){
+##    field(PINI, "YES")
+    field(DTYP, "stream")
+    field(OUT, "@NewFocus8742.proto setVelo($(P):A$(AXIS):AXIS) $(PORT)")
+    field(FLNK, $(P):A$(AXIS):GET_VELOCITY)
+}
