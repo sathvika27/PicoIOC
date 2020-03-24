@@ -1,4 +1,4 @@
-../O.Common/picoIOC.dbd: /usr/local/epics/base/dbd/base.dbd \
+../O.Common/motorseqIOC.dbd: /usr/local/epics/base/dbd/base.dbd \
     /usr/local/epics/base/dbd/menuGlobal.dbd \
     /usr/local/epics/base/dbd/menuAlarmSevr.dbd \
     /usr/local/epics/base/dbd/menuAlarmStat.dbd \
@@ -66,7 +66,8 @@
     /usr/local/epics/support/asyn/current/dbd/devAsynFloat64TimeSeries.dbd \
     /usr/local/epics/support/asyn/current/dbd/devAsynUInt32Digital.dbd \
     /usr/local/epics/support/asyn/current/dbd/devAsynRecord.dbd \
-    /usr/local/epics/support/stream/current/dbd/stream.dbd
+    /usr/local/epics/support/stream/current/dbd/stream.dbd \
+    /usr/local/epics/support/seq/current/dbd/devSequencer.dbd
 
 /usr/local/epics/base/dbd/base.dbd:
 /usr/local/epics/base/dbd/menuGlobal.dbd:
@@ -137,4 +138,5 @@
 /usr/local/epics/support/asyn/current/dbd/devAsynUInt32Digital.dbd:
 /usr/local/epics/support/asyn/current/dbd/devAsynRecord.dbd:
 /usr/local/epics/support/stream/current/dbd/stream.dbd:
-../O.Common/picoIOC.dbd: ../Makefile
+/usr/local/epics/support/seq/current/dbd/devSequencer.dbd:
+../O.Common/motorseqIOC.dbd: ../Makefile

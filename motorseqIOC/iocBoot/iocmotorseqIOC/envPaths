@@ -1,5 +1,7 @@
-epicsEnvSet("IOC","iocpicoIOC")
-epicsEnvSet("TOP","/home/epics/repos/PicoIOC/picoIOC")
+epicsEnvSet("IOC","iocmotorSeqIOC")
+epicsEnvSet("TOP","/home/epics/repos/PicoIOC/motorSeqIOC")
 epicsEnvSet("EPICS_BASE","/usr/local/epics/base")
 epicsEnvSet("ASYN","/usr/local/epics/support/asyn/current")
 epicsEnvSet("STREAMDEVICE","/usr/local/epics/support/stream/current")
+epicsEnvSet("SEQ","/usr/local/epics/support/seq/current")
+

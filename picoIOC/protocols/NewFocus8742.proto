@@ -18,3 +18,8 @@ getVelo{
 setVelo{
 	out "%(\$1)iVA%i";
 }
+
+getPos{
+	out "%(\$1)iPA?";
+	in "%i";
+}

@@ -1,0 +1,17 @@
+record(longout, "$(P):A$(AXIS):MOVE_REL"){
+    field(DTYP, "stream")
+    field(OUT, "@moverel.proto move_relative($(P):A$(AXIS):AXIS) $(PORT)")
+}
+record(longin, "$(P):A$(AXIS):AXIS"){
+    field(PINI, "YES")
+    field(VAL, "$(AXIS)")
+}
+
+record(seq, "SEQ"){
+	field(PINI, "YES")
+	field(DLY1, 0.05)
+	field(LNK1, "$(P):A$(AXIS):AXIS.PROC")
+	field(DLY2, 0.05)
+	field(LNK2, "$(P):A$(AXIS):AXIS.PROC")
+	field(FLNK, "SEQ")
+}

@@ -1,0 +1,8 @@
+OutTerminator = CR;
+InTerminator = CR LF;
+
+move_relative{
+	out "%(\$1)iPR%i";
+}
+
+

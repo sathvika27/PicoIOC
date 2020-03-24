@@ -17,3 +17,18 @@ record(longout, "$(P):A$(AXIS):SET_VELOCITY"){
     field(OUT, "@NewFocus8742.proto setVelo($(P):A$(AXIS):AXIS) $(PORT)")
     field(FLNK, $(P):A$(AXIS):GET_VELOCITY)
 }
+record(longout, "$(P):A$(AXIS):GETPOS"){
+    field(DTYP, "stream")
+    field(OUT, "@NewFocus8742.proto getPos($(P):A$(AXIS):AXIS) $(PORT)")
+}
+record(seq, "SEQ"){
+ #   field(PINI, "YES")
+    field(SELM, "All")
+    field(LNK1, "$(P):A1:MOVE_REL PP")
+    field(DOL1, "200")
+    field(DLY1, "10")
+    field(LNK2, "$(P):A4:MOVE_REL PP")
+    field(DOL2, "200")
+    field(DLY2, "10")
+    field(FLNK, "seq")
+}

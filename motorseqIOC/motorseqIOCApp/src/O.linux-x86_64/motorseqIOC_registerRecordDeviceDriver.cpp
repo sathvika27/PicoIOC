@@ -1,5 +1,5 @@
 /* THIS IS A GENERATED FILE. DO NOT EDIT! */
-/* Generated from ../O.Common/picoIOC.dbd */
+/* Generated from ../O.Common/motorseqIOC.dbd */
 
 #include <string.h>
 
@@ -134,19 +134,20 @@ epicsShareExtern dset *pvar_dset_devAaiSoft, *pvar_dset_devaaiStream,
     *pvar_dset_devTimestampSI, *pvar_dset_devSiGeneralTime,
     *pvar_dset_devSiEnviron, *pvar_dset_asynSiOctetCmdResponse,
     *pvar_dset_asynSiOctetWriteRead, *pvar_dset_asynSiOctetRead,
-    *pvar_dset_devstringinStream, *pvar_dset_devSoSoft,
-    *pvar_dset_devSoSoftCallback, *pvar_dset_devSoStdio,
-    *pvar_dset_asynSoOctetWrite, *pvar_dset_devstringoutStream,
-    *pvar_dset_devSASoft, *pvar_dset_devWfSoft,
-    *pvar_dset_asynWfOctetCmdResponse, *pvar_dset_asynWfOctetWriteRead,
-    *pvar_dset_asynWfOctetRead, *pvar_dset_asynWfOctetWrite,
-    *pvar_dset_asynWfOctetWriteBinary, *pvar_dset_asynInt8ArrayWfIn,
-    *pvar_dset_asynInt8ArrayWfOut, *pvar_dset_asynInt16ArrayWfIn,
-    *pvar_dset_asynInt16ArrayWfOut, *pvar_dset_asynInt32ArrayWfIn,
-    *pvar_dset_asynInt32ArrayWfOut, *pvar_dset_asynInt32TimeSeries,
-    *pvar_dset_asynFloat32ArrayWfIn, *pvar_dset_asynFloat32ArrayWfOut,
-    *pvar_dset_asynFloat64ArrayWfIn, *pvar_dset_asynFloat64ArrayWfOut,
-    *pvar_dset_asynFloat64TimeSeries, *pvar_dset_devwaveformStream;
+    *pvar_dset_devstringinStream, *pvar_dset_devSiSeq,
+    *pvar_dset_devSoSoft, *pvar_dset_devSoSoftCallback,
+    *pvar_dset_devSoStdio, *pvar_dset_asynSoOctetWrite,
+    *pvar_dset_devstringoutStream, *pvar_dset_devSASoft,
+    *pvar_dset_devWfSoft, *pvar_dset_asynWfOctetCmdResponse,
+    *pvar_dset_asynWfOctetWriteRead, *pvar_dset_asynWfOctetRead,
+    *pvar_dset_asynWfOctetWrite, *pvar_dset_asynWfOctetWriteBinary,
+    *pvar_dset_asynInt8ArrayWfIn, *pvar_dset_asynInt8ArrayWfOut,
+    *pvar_dset_asynInt16ArrayWfIn, *pvar_dset_asynInt16ArrayWfOut,
+    *pvar_dset_asynInt32ArrayWfIn, *pvar_dset_asynInt32ArrayWfOut,
+    *pvar_dset_asynInt32TimeSeries, *pvar_dset_asynFloat32ArrayWfIn,
+    *pvar_dset_asynFloat32ArrayWfOut, *pvar_dset_asynFloat64ArrayWfIn,
+    *pvar_dset_asynFloat64ArrayWfOut, *pvar_dset_asynFloat64TimeSeries,
+    *pvar_dset_devwaveformStream;
 
 static const char * const deviceSupportNames[] = {
     "devAaiSoft", "devaaiStream", "devAaoSoft", "devaaoStream",
@@ -177,8 +178,8 @@ static const char * const deviceSupportNames[] = {
     "devPrintfStdio", "devSiSoft", "devSiSoftCallback", "devTimestampSI",
     "devSiGeneralTime", "devSiEnviron", "asynSiOctetCmdResponse",
     "asynSiOctetWriteRead", "asynSiOctetRead", "devstringinStream",
-    "devSoSoft", "devSoSoftCallback", "devSoStdio", "asynSoOctetWrite",
-    "devstringoutStream", "devSASoft", "devWfSoft",
+    "devSiSeq", "devSoSoft", "devSoSoftCallback", "devSoStdio",
+    "asynSoOctetWrite", "devstringoutStream", "devSASoft", "devWfSoft",
     "asynWfOctetCmdResponse", "asynWfOctetWriteRead", "asynWfOctetRead",
     "asynWfOctetWrite", "asynWfOctetWriteBinary", "asynInt8ArrayWfIn",
     "asynInt8ArrayWfOut", "asynInt16ArrayWfIn", "asynInt16ArrayWfOut",
@@ -234,7 +235,7 @@ static const dset * const devsl[] = {
     pvar_dset_devSiGeneralTime, pvar_dset_devSiEnviron,
     pvar_dset_asynSiOctetCmdResponse, pvar_dset_asynSiOctetWriteRead,
     pvar_dset_asynSiOctetRead, pvar_dset_devstringinStream,
-    pvar_dset_devSoSoft, pvar_dset_devSoSoftCallback,
+    pvar_dset_devSiSeq, pvar_dset_devSoSoft, pvar_dset_devSoSoftCallback,
     pvar_dset_devSoStdio, pvar_dset_asynSoOctetWrite,
     pvar_dset_devstringoutStream, pvar_dset_devSASoft,
     pvar_dset_devWfSoft, pvar_dset_asynWfOctetCmdResponse,
@@ -262,7 +263,7 @@ typedef void (*reg_func)(void);
 epicsShareExtern reg_func pvar_func_arrInitialize, pvar_func_asSub,
     pvar_func_asynInterposeEosRegister,
     pvar_func_asynInterposeFlushRegister, pvar_func_asynRegister,
-    pvar_func_dbndInitialize, pvar_func_drvAsynIPPortRegisterCommands,
+    pvar_func_dbndInitialize, pvar_func_drvAsynIpPortRegisterCommands,
     pvar_func_streamRegistrar, pvar_func_syncInitialize,
     pvar_func_tsInitialize;
 
@@ -307,10 +308,10 @@ static struct iocshVarDef vardefs[] = {
     {NULL, iocshArgInt, NULL}
 };
 
-int picoIOC_registerRecordDeviceDriver(DBBASE *pbase)
+int motorseqIOC_registerRecordDeviceDriver(DBBASE *pbase)
 {
     static int executed = 0;
-    const char *bldTop = "/home/epics/repos/PicoIOC/picoIOC";
+    const char *bldTop = "/home/epics/repos/PicoIOC/motorseqIOC";
     const char *envTop = getenv("TOP");
 
     if (envTop && strcmp(envTop, bldTop)) {
@@ -338,7 +339,7 @@ int picoIOC_registerRecordDeviceDriver(DBBASE *pbase)
     pvar_func_asynInterposeFlushRegister();
     pvar_func_asynRegister();
     pvar_func_dbndInitialize();
-    pvar_func_drvAsynIPPortRegisterCommands();
+    pvar_func_drvAsynIpPortRegisterCommands();
     pvar_func_streamRegistrar();
     pvar_func_syncInitialize();
     pvar_func_tsInitialize();
@@ -346,14 +347,14 @@ int picoIOC_registerRecordDeviceDriver(DBBASE *pbase)
     return 0;
 }
 
-/* picoIOC_registerRecordDeviceDriver */
+/* motorseqIOC_registerRecordDeviceDriver */
 static const iocshArg rrddArg0 = {"pdbbase", iocshArgPdbbase};
 static const iocshArg *rrddArgs[] = {&rrddArg0};
 static const iocshFuncDef rrddFuncDef =
-    {"picoIOC_registerRecordDeviceDriver", 1, rrddArgs};
+    {"motorseqIOC_registerRecordDeviceDriver", 1, rrddArgs};
 static void rrddCallFunc(const iocshArgBuf *)
 {
-    picoIOC_registerRecordDeviceDriver(*iocshPpdbbase);
+    motorseqIOC_registerRecordDeviceDriver(*iocshPpdbbase);
 }
 
 } // extern "C"
