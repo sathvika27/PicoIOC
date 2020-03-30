@@ -21,6 +21,7 @@ record(longin, "$(P):A$(AXIS):GETPOS"){
     field(DTYP, "stream")
     field(INP, "@NewFocus8742.proto getPos($(P):A$(AXIS):AXIS) $(PORT)")
 }
+
 record(seq, "SEQ"){
  #   field(PINI, "YES")
     field(SELM, "All")
@@ -31,4 +32,11 @@ record(seq, "SEQ"){
     field(DOL2, "200")
     field(DLY2, "10")
     field(FLNK, "SEQ")
+}
+record(longout, "$(P):$(AXIS):stopMotion"){
+    field(DTYP, "stream")
+    field(OUT, "@NewFocus8742.proto stopMotion($(P):A$(AXIS):AXIS) $(PORT)")
+}
+record(bi, "STOP:$(AXIS)"){
+   field(FLNK, "$(P):$(AXIS):stopMotion")
 }

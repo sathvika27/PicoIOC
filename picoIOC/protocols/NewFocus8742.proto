@@ -20,6 +20,10 @@ setVelo{
 }
 
 getPos{
-	out "%(\$1)iPA?";
+	out "%(\$1)iTP?";
 	in "%i";
+}
+
+stopMotion{
+	out "%(\$1)iST";
 }
