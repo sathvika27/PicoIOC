@@ -40,7 +40,3 @@ record(longout, "$(P):$(AXIS):stopMotion"){
 record(bi, "STOP:$(AXIS)"){
    field(FLNK, "$(P):$(AXIS):stopMotion")
 }
-#record(calcout, "$(P):STOPMOTOR"){
- #   field(INPA, "STOP")
- #   field(CALC, "$(P):stopMotion PP")
-#}
